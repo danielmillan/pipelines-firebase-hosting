@@ -5,6 +5,9 @@ inputs:
   firebase-token:
     description: Token generated to authenticate in firebase
     required: true
+  resources-name:
+    description: Name of the folder containing the resources to be deployed
+    required: true
   project-name:
     description: Firebase project name
     required: true
@@ -18,4 +21,5 @@ runs:
         CURRENT_PATH=$(pwd)/.github/actions/pipelines-firebase-hosting
         bash $CURRENT_PATH/deploy-site.sh \
           --firebase-token=${{ inputs.firebase-token }} \
+          --resources-name=${{ inputs.resources-name }} \
           --project-name=${{ inputs.project-name }}
