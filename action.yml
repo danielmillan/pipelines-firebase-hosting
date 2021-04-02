@@ -18,4 +18,4 @@ runs:
         CURRENT_PATH=$(pwd)/.github/actions/pipelines-firebase-hosting
         bash $CURRENT_PATH/deploy-site.sh \
           --firebase-token=${{ inputs.firebase-token }} \
-          --project-name=${{ inputs.project.name }}
+          --project-name=${{ inputs.project-name }}
