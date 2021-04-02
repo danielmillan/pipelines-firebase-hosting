@@ -1,0 +1,15 @@
+{
+    "hosting": {
+        "public": "NAME_DIR",
+        "rewrites": [{
+            "source": "**",
+            "destination": "/index.html"
+        }],
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }
+}
+  

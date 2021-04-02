@@ -37,18 +37,15 @@ showValidation() {
 if [ -z "$FIREBASE_TOKEN" ] || [ -z "$RESOURCES_NAME" ] || [ -z "$PROJECT_NAME" ]; then
     showValidation
 fi
-
+pwd
+ls -la
 # Install packages
-
-echo "#### Installing firebase tools ####"
 npm ci
-echo "#### Firebase tools installed ####"
-
-echo "#### Starting site deployment ####"
-
-echo "#### Creating a firebase target ####"
+sed -i '' "s&NAME_DIR&$RESOURCES_NAME&g" ./firebase.json
+sed -i '' "s&PROJECT&$PROJECT_NAME&g" ./firebase.json
 # Create a target
-./node_modules/.bin/firebase target:apply hosting "$PROJECT_NAME" --token="$FIREBASE_TOKEN"
 echo "#### Deploying the site $PROJECT_NAME ####"
+./node_modules/.bin/firebase target:apply hosting "$PROJECT_NAME" --token="$FIREBASE_TOKEN"
 # Deploy site in firebase
 ./node_modules/.bin/firebase deslpoy --token="$FIREBASE_TOKEN" --only hosting:"$PROJECT_NAME"
+echo "Site deploy !"
