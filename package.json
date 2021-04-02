@@ -1,0 +1,23 @@
+{
+  "name": "pipelines-firebase-hosting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://danielmillan@github.com/danielmillan/pipelines-firebase-hosting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmillan/pipelines-firebase-hosting/issues"
+  },
+  "homepage": "https://github.com/danielmillan/pipelines-firebase-hosting#readme",
+  "dependencies": {
+    "firebase-tools": "^9.8.0"
+  }
+}

@@ -1,0 +1,21 @@
+name: Firebase for pipelines
+description: This action allows you to deploy a site on firebase hosting
+
+inputs:
+  firebase-token:
+    description: Token generated to authenticate in firebase
+    required: true
+  project-name:
+    description: Firebase project name
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Deploy a firebase site
+      shell: bash
+      run: |
+        CURRENT_PATH=$(pwd)/.github/actions/pipelines-firebase-hosting
+        bash $CURRENT_PATH/deploy-site.sh \
+          --firebase-token=${{ inputs.firebase-token }} \
+          --project-name=${{ inputs.project.name }}
