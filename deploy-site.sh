@@ -35,6 +35,15 @@ fi
 
 # Install packages
 
-echo "\n \n #### Installing firebase tools ####"
+echo "#### Installing firebase tools ####"
 npm ci
-echo "\n \n #### Firebase tools installed ####"
+echo "#### Firebase tools installed ####"
+
+echo "#### Starting site deployment ####"
+
+echo "#### Creating a firebase target ####"
+# Create a target
+./node_modules/.bin/firebase target:apply hosting "$PROJECT_NAME" --token="$FIREBASE_TOKEN"
+echo "#### Deploying the site $PROJECT_NAME ####"
+# Deploy site in firebase
+./node_modules/.bin/firebase deslpoy --token="$FIREBASE_TOKEN" --only hosting:"$PROJECT_NAME"
