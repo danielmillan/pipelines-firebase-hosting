@@ -42,10 +42,8 @@ fi
 npm ci
 sed -i -e "s#NAME_DIR#$RESOURCES_NAME#g" ./firebase.json
 sed -i -e "s#PROJECT#$PROJECT_NAME#g" ./.firebaserc
-cat firebase.json
 # Create a target
 echo "#### Deploying the site $PROJECT_NAME ####"
-./node_modules/.bin/firebase target:apply hosting "$PROJECT_NAME" --token="$FIREBASE_TOKEN"
 # Deploy site in firebase
-./node_modules/.bin/firebase deslpoy --token="$FIREBASE_TOKEN" --only hosting:"$PROJECT_NAME"
+./node_modules/.bin/firebase deploy --token="$FIREBASE_TOKEN" --only hosting
 echo "Site deploy !"
