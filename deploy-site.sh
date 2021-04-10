@@ -43,7 +43,7 @@ npm ci
 
 # Copy files config
 cp ./.github/actions/pipelines-firebase-hosting/.firebaserc ./
-cp ./.github/actions/pipelines-firebase-hosting/.firebase.json ./
+cp ./.github/actions/pipelines-firebase-hosting/firebase.json ./
 
 # Set project info
 sed -i -e "s#NAME_DIR#$RESOURCES_NAME#g" ./firebase.json
