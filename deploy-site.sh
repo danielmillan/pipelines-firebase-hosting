@@ -57,7 +57,7 @@ sed -i -e "s#PROJECT#$PROJECT_NAME#g" ./.firebaserc
 # Validate clausule to create a target
 if [ ! -z "$TARGET_NAME" ]; then
     firebase target:apply hosting $TARGET_NAME $TARGET_NAME
+    firebase deploy --token="$FIREBASE_TOKEN" --only hosting:$TARGET_NAME
+else
+    firebase deploy --token="$FIREBASE_TOKEN" --only hosting
 fi;
-
-# Deploy site in firebase
-firebase deploy --token="$FIREBASE_TOKEN" --only hosting
