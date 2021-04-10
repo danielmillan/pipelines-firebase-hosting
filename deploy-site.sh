@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -eu
-
 for arg in "$@"; do
     case $arg in
     --firebase-token=*)
