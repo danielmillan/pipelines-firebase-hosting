@@ -11,7 +11,7 @@ To configure in your repository this action, it is necessary to have a PTA and u
         uses: actions/checkout@v2
         with:
           repository: danielmillan/pipelines-firebase-hosting
-          ref: '1.0.2'
+          ref: '1.0.5' //Latest stable version
           token: ${{ secrets.CA_GITHUB_TOKEN }}
           persist-credentials: false
           path: ./.github/actions/pipelines-firebase-hosting
