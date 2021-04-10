@@ -1,4 +1,4 @@
-name: Firebase Deploy Github Action
+name: Deploy Firebase Site
 author: danielmillan
 branding:
   icon: box
