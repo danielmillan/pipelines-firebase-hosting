@@ -12,7 +12,7 @@ for arg in "$@"; do
         RESOURCES_NAME="${arg#*=}"
         ;;
     --target-name=*)
-        RESOURCES_NAME="${arg#*=}"
+        TARGET_NAME="${arg#*=}"
         ;;
     esac
     shift
