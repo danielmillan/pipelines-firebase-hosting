@@ -11,7 +11,7 @@ To configure in your repository this action, it is necessary to have a PTA and u
         uses: actions/checkout@v2
         with:
           repository: danielmillan/pipelines-firebase-hosting
-          ref: '1.0.5' //Latest stable version
+          ref: '1.0.7' //Latest stable version
           token: ${{ secrets.CA_GITHUB_TOKEN }}
           persist-credentials: false
           path: ./.github/actions/pipelines-firebase-hosting
@@ -24,7 +24,7 @@ To configure in your repository this action, it is necessary to have a PTA and u
 Please note the following parameters to configure the action:
 
 ```sh
-firebase-token:
+  firebase-token:
     description: Token generated to authenticate in firebase
     required: true
   resources-name:
@@ -33,6 +33,9 @@ firebase-token:
   project-name:
     description: Firebase project name
     required: true
+  target-name:
+    description: Target name if you need to deploy to a specific instance
+    required: false
 ```
 
 ## Job
@@ -44,6 +47,7 @@ firebase-token:
           firebase-token: ${{ secrets.FIREBASE_TOKEN }}
           resources-name: dist
           project-name: my-website
+          target-name: target-site // only is neccessary
 ```
 
 > Note: For this configuration you will need to provide a token `FIREBASE_TOKEN` which you can obtain by executing the line firebase login:ci and add it as a secret in your repository. For more information about authentication with the firebase CLI, see: https://firebase.google.com/docs/cli
