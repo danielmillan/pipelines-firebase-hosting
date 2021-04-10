@@ -15,6 +15,9 @@ inputs:
   project-name:
     description: Firebase project name
     required: true
+  target-name:
+    description: Target name if you need to deploy to a specific instance
+    required: false
 
 runs:
   using: "composite"
@@ -27,3 +30,4 @@ runs:
           --firebase-token=${{ inputs.firebase-token }} \
           --resources-name=${{ inputs.resources-name }} \
           --project-name=${{ inputs.project-name }}
+          --target-name=${{ inputs.target-name }}
