@@ -1,4 +1,8 @@
-name: Firebase for pipelines
+name: Firebase Deploy Github Action
+author: danielmillan
+branding:
+  icon: box
+  color: blue
 description: This action allows you to deploy a site on firebase hosting
 
 inputs:
