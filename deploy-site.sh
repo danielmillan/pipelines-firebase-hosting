@@ -40,8 +40,8 @@ fi
 
 # Install packages
 npm ci
-pwd
-ls -la ./.github/actions/pipelines-firebase-hosting
+cp ./.github/actions/pipelines-firebase-hosting/.firebaserc ./
+cp ./.github/actions/pipelines-firebase-hosting/.firebas.json ./
 sed -i -e "s#NAME_DIR#$RESOURCES_NAME#g" ./firebase.json
 sed -i -e "s#PROJECT#$PROJECT_NAME#g" ./.firebaserc
 echo "#### Deploying the site $PROJECT_NAME ####"
