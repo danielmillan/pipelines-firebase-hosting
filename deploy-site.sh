@@ -40,10 +40,15 @@ fi
 
 # Install packages
 npm ci
+
+# Copy files config
 cp ./.github/actions/pipelines-firebase-hosting/.firebaserc ./
-cp ./.github/actions/pipelines-firebase-hosting/.firebas.json ./
+cp ./.github/actions/pipelines-firebase-hosting/.firebase.json ./
+
+# Set project info
 sed -i -e "s#NAME_DIR#$RESOURCES_NAME#g" ./firebase.json
 sed -i -e "s#PROJECT#$PROJECT_NAME#g" ./.firebaserc
+
 echo "#### Deploying the site $PROJECT_NAME ####"
 # Deploy site in firebase
 ./node_modules/.bin/firebase deploy --token="$FIREBASE_TOKEN" --only hosting
